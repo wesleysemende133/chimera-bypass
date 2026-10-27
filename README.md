@@ -6,8 +6,13 @@
 
 ### A12/A13 Activation Lock Bypass Research Toolkit
 
+[![Status](https://img.shields.io/badge/status-experimental-orange?style=for-the-badge)]()
+[![Platform](https://img.shields.io/badge/platform-iOS%20A12%2FA13-blue?style=for-the-badge)]()
+[![Language](https://img.shields.io/badge/language-Python%20%7C%20C-yellow?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)]()
+[![Author](https://img.shields.io/badge/author-Wesley%20Agnaldo%20Semende-purple?style=for-the-badge)]()
 
-**Criado e desenvolvido por [Wesley Agnaldo Semende](https://github.com/wesleysemende133)**
+**Criado e desenvolvido por [Wesley Agnaldo Semende](https://github.com/)**
 
 </div>
 
@@ -212,8 +217,8 @@ Distribuído sob a licença **MIT**. Consulte o arquivo [`LICENSE`](LICENSE) par
 
 **Wesley Agnaldo Semende**
 
-[![GitHub](https://img.shields.io/badge/GitHub-@wesley-181717?style=for-the-badge&logo=github)](https://github.com/)
-[![Email](https://img.shields.io/badge/Email-contato-red?style=for-the-badge&logo=gmail)](mailto:contato@example.com)
+[![GitHub](https://img.shields.io/badge/GitHub-@wesley-181717?style=for-the-badge&logo=github)](https://github.com/wesleysemende133)
+[![Email](https://img.shields.io/badge/Email-contato-red?style=for-the-badge&logo=gmail)](mailto:weseleysemende@gmail.com)
 
 </div>
 
