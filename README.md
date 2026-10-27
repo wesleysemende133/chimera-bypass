@@ -1,46 +1,53 @@
-
-```markdown
 <div align="center">
 
-# 🔥 Project Chimera
+<img src="https://img.shields.io/badge/Project-Chimera-ff4500?style=for-the-badge&logo=fire&logoColor=white" alt="Project Chimera"/>
 
-### A12/A13 Activation Lock Bypass Research Toolkit
+# Project Chimera
 
-**Criado e desenvolvido por [Wesley Agnaldo Semende](https://github.com/wesleysemende133)**
+### A12 / A13 Activation Lock Bypass Research Toolkit
+
+<br/>
+
+[![Status](https://img.shields.io/badge/STATUS-EXPERIMENTAL-orange?style=flat-square)](https://github.com/) [![Platform](https://img.shields.io/badge/PLATFORM-iOS%20A12%2FA13-blue?style=flat-square)](https://github.com/) [![Language](https://img.shields.io/badge/LANGUAGE-Python%20%7C%20C-yellow?style=flat-square)](https://github.com/) [![License](https://img.shields.io/badge/LICENSE-MIT-green?style=flat-square)](LICENSE) [![Version](https://img.shields.io/badge/VERSION-0.1.0--alpha-red?style=flat-square)](https://github.com/)
+
+<br/>
+
+**Criado e desenvolvido por [Wesley Agnaldo Semende](https://github.com/)**
+
+<sub>Security Research • Reverse Engineering • iOS Internals</sub>
 
 </div>
 
 ---
 
-> ## ⚠️ AVISO IMPORTANTE
->
-> **Esta ferramenta NÃO FOI TESTADA em nenhum dispositivo real.**
+<h2 align="center">⚠️ AVISO IMPORTANTE</h2>
+
+> **Esta ferramenta ainda NÃO FOI TESTADA em nenhum dispositivo real.**
 >
 > O Project Chimera foi construído com base em pesquisas de engenharia reversa e na lógica de exploits públicos (como o `usbliter8`). Se você pretende testá-la, **use um dispositivo que você possui e que não seja o seu principal**.
 >
-> **Contribua com a comunidade**: envie Issues e Pull Requests com logs de erro e resultados. O avanço do projeto depende da colaboração de todos.
+> **Contribua com a comunidade:** envie Issues e Pull Requests com logs de erro e resultados. O avanço do projeto depende da colaboração de todos.
 
 ---
 
 ## 📑 Sumário
 
-- [Visão Geral](#-visão-geral)
-- [Aviso Legal e Limitações](#-aviso-legal-e-limitações)
-- [Arquitetura do Projeto](#️-arquitetura-do-projeto)
-- [Como Usar](#-como-usar)
-  - [Pré-requisitos](#pré-requisitos)
-  - [Instalação](#instalação)
-  - [Execução](#execução)
-- [Diferencial Técnico](#-o-diferencial-técnico-por-que-o-chimera-funciona-no-wi-fi)
-- [Como Contribuir](#-como-contribuir)
-- [Licença](#-licença)
-- [Autor](#-autor)
+| # | Seção |
+|---|-------|
+| 01 | [Visão Geral](#-visão-geral) |
+| 02 | [Aviso Legal e Limitações](#-aviso-legal-e-limitações) |
+| 03 | [Arquitetura do Projeto](#️-arquitetura-do-projeto) |
+| 04 | [Como Usar](#-como-usar) |
+| 05 | [Diferencial Técnico](#-o-diferencial-técnico-por-que-o-chimera-funciona-no-wi-fi) |
+| 06 | [Como Contribuir](#-como-contribuir) |
+| 07 | [Licença](#-licença) |
+| 08 | [Autor](#-autor) |
 
 ---
 
 ## 📖 Visão Geral
 
-O **Project Chimera** é uma ferramenta de **pesquisa de segurança** e **bypass de Activation Lock** desenvolvida do zero para dispositivos Apple equipados com os chips **A12 (iPhone XS/XR)** e **A13 (iPhone 11 / SE 2)**.
+O **Project Chimera** é uma ferramenta de **pesquisa de segurança** e **bypass de Activation Lock** desenvolvida do zero para dispositivos Apple equipados com os chips **A12 (iPhone XS / XR)** e **A13 (iPhone 11 / SE 2)**.
 
 Diferente de abordagens que tentam negociar um handshake falso com o `mobileactivationd` — e falham com `PlistError` —, o Chimera adota uma filosofia de **substituição de identidade em nível de sistema**.
 
@@ -87,8 +94,10 @@ chimera-bypass/
 
 O cérebro do projeto. Gerencia o fluxo de **5 fases**, verifica a integridade do ambiente, aciona o gerador de payloads e comanda a injeção via SSH.
 
-- `--mock` → testa a lógica sem hardware
-- `--inspect` → visualiza os plists gerados
+| Flag | Função |
+|------|--------|
+| `--mock` | Testa a lógica sem hardware |
+| `--inspect` | Visualiza os plists gerados |
 
 ### 💉 2. Exploit e Hardware (`src/exploit/`)
 
@@ -166,6 +175,14 @@ python3 src/main.py
 
 ---
 
+## 🔬 O Diferencial Técnico: Por que o Chimera funciona (no Wi-Fi)?
+
+O projeto abandona a abordagem de **falsos handshakes de rede** — que falham no A12+ — e adota a **substituição de arquivos em disco**.
+
+Como o `usbliter8` nos concede controle total da partição de dados **antes** do iOS inicializar, o sistema lê o arquivo `activation_record.plist` modificado como se fosse legítimo. O patch do `MobileGestalt` atua como uma **segunda camada de segurança**, impedindo que o iOS reverta o estado de ativação com base no hardware real.
+
+---
+
 ## 🤝 Como Contribuir
 
 Este é um projeto **open source** de pesquisa. Se você possui um iPhone XS, XR, 11 ou SE 2 e deseja testar:
@@ -191,14 +208,6 @@ Este é um projeto **open source** de pesquisa. Se você possui um iPhone XS, XR
 
 ---
 
-## 🔬 O Diferencial Técnico: Por que o Chimera funciona (no Wi-Fi)?
-
-O projeto abandona a abordagem de **falsos handshakes de rede** — que falham no A12+ — e adota a **substituição de arquivos em disco**.
-
-Como o `usbliter8` nos concede controle total da partição de dados **antes** do iOS inicializar, o sistema lê o arquivo `activation_record.plist` modificado como se fosse legítimo. O patch do `MobileGestalt` atua como uma **segunda camada de segurança**, impedindo que o iOS reverta o estado de ativação com base no hardware real.
-
----
-
 ## 📜 Licença
 
 Distribuído sob a licença **MIT**. Consulte o arquivo [`LICENSE`](LICENSE) para mais informações.
@@ -211,8 +220,7 @@ Distribuído sob a licença **MIT**. Consulte o arquivo [`LICENSE`](LICENSE) par
 
 **Wesley Agnaldo Semende**
 
-[![GitHub](https://img.shields.io/badge/GitHub-@wesley-181717?style=for-the-badge&logo=github)](https://github.com/wesleysemende133)
-[![Email](https://img.shields.io/badge/Email-contato-red?style=for-the-badge&logo=gmail)](mailto:weseleysemende@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-@wesley-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wesleysemende133) [![Email](https://img.shields.io/badge/Email-contato-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:wesleysemende@gmail.com)
 
 </div>
 
@@ -220,9 +228,12 @@ Distribuído sob a licença **MIT**. Consulte o arquivo [`LICENSE`](LICENSE) par
 
 <div align="center">
 
-**⭐ Se este projeto foi útil para você, considere dar uma estrela no repositório!**
+### ⭐ Se este projeto foi útil para você, considere dar uma estrela no repositório!
 
-*Feito com 🔥 e engenharia reversa por Wesley Agnaldo Semende*
+<sub>Feito com 🔥 e engenharia reversa por <strong>Wesley Agnaldo Semende</strong></sub>
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=80&section=footer" width="100%" alt="footer"/>
 
 </div>
-```
